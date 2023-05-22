@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { DieValue } from "@/components/types";
 import {
   Button,
   DiceGrid,
@@ -9,24 +8,11 @@ import {
   RangeInput,
   StatsDisplay,
 } from "@/components/ds";
-
-const randomDiceValuesGenerator = ({
-  amount = 0,
-}: {
-  amount: number;
-}): DieValue[] =>
-  Array.from({ length: amount }, () => {
-    return (Math.floor(Math.random() * 6) + 1) as DieValue;
-  });
-
-const diceValuesReducer = ({ values }: { values: DieValue[] }): number => {
-  return values.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  }, 0);
-};
-
-const targetScoreSetter = ({ amount }: { amount: number }) =>
-  (Math.floor(Math.random() * 6) + 1) * amount;
+import {
+  diceValuesReducer,
+  randomDiceValuesGenerator,
+  targetScoreSetter,
+} from "../utils/functions";
 
 const RANGE_MESSAGE = "Number of dice to roll:";
 
