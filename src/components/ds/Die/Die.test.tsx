@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
-import { Die, DieValue } from ".";
+import Die from ".";
+import { DieValue } from "@/components/types";
 
 describe("Die component", () => {
   const dieValues = [1, 2, 3, 4, 5, 6] as DieValue[];

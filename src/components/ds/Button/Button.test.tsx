@@ -1,4 +1,4 @@
-import { Button } from ".";
+import Button from ".";
 import { fireEvent, render } from "@testing-library/react";
 
 describe("Button component", () => {

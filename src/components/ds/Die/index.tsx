@@ -1,12 +1,12 @@
 "use client";
 
-export type DieValue = 1 | 2 | 3 | 4 | 5 | 6;
+import { DieValue } from "@/components/types";
 
 type DieProps = {
   value: DieValue;
 };
 
-export const Die = ({ value }: DieProps) => {
+const Die = ({ value }: DieProps) => {
   const diePipsMapper = [
     [4],
     [0, 8],
@@ -41,3 +41,5 @@ export const Die = ({ value }: DieProps) => {
 };
 
 Die.displayName = "Die";
+
+export default Die;
