@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
   DiceGrid,
@@ -8,57 +7,24 @@ import {
   RangeInput,
   StatsDisplay,
 } from "@/components/ds";
-import {
-  diceValuesReducer,
-  randomDiceValuesGenerator,
-  targetScoreSetter,
-} from "../utils/functions";
+import useGameBoard from "./useGameBoard/useGameBoard";
 
 const RANGE_MESSAGE = "Number of dice to roll:";
 
 const GameBoard = () => {
-  const [numberOfDices, setNumberOfDices] = useState(0);
-  const [targetScore, setTargetScore] = useState(0);
-  const [numberOfRolls, setNumberOfRolls] = useState(0);
-  const [rollResult, setRollResult] = useState(0);
-  const [highScore, setHighScore] = useState(0);
-  const isHighScore = useRef(false);
-  const [diceValues, setDiceValues] = useState(
-    randomDiceValuesGenerator({ amount: 0 })
-  );
-
-  const handleRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(event.target.value);
-    setNumberOfDices(value);
-  };
-
-  useEffect(() => {
-    setTargetScore(targetScoreSetter({ amount: numberOfDices }));
-    setRollResult(0);
-    setNumberOfRolls(0);
-    setHighScore(0);
-  }, [numberOfDices]);
-
-  useEffect(() => {
-    setRollResult(diceValuesReducer({ values: diceValues }));
-  }, [diceValues]);
-
-  useEffect(() => {
-    if (rollResult > highScore) {
-      setHighScore(rollResult);
-      isHighScore.current = true;
-    } else isHighScore.current = false;
-  }, [highScore, rollResult]);
-
-  const handleOnClick = () => {
-    setDiceValues(randomDiceValuesGenerator({ amount: numberOfDices }));
-    setNumberOfRolls((currentCount) => currentCount + 1);
-  };
-
-  const handleModalClick = () => {
-    setNumberOfDices(0);
-  };
-  const shouldShowModal = highScore > targetScore && targetScore > 0;
+  const {
+    numberOfDices,
+    targetScore,
+    rollResult,
+    highScore,
+    numberOfRolls,
+    isHighScore,
+    diceValues,
+    handleRangeChange,
+    handleOnClick,
+    handleModalClick,
+    shouldShowModal,
+  } = useGameBoard();
 
   return (
     <div className={"felx w-full gap-10"}>
