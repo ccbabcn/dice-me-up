@@ -1,5 +1,6 @@
 "use client";
 
+import "tailwindcss/tailwind.css";
 import { GameBoard } from "@/components/ui";
 
 export default function Home() {
