@@ -8,7 +8,7 @@ type RangeInputProps = {
 
 const RangeInput = ({ message, value, onChange }: RangeInputProps) => {
   return (
-    <div className="RangeInput flex flex-col items-center gap-1">
+    <div className="RangeInput text-white flex flex-col items-center gap-1">
       <label htmlFor="amount">{`${message} ${value}`}</label>
       <input
         type="range"
