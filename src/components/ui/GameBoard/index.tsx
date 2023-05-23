@@ -29,6 +29,9 @@ const GameBoard = () => {
   return (
     <div className={"felx w-full gap-10"}>
       <div className={"flex flex-col z-20 sticky w-full top-0 bg-black p-10"}>
+        <div className="flex text-2xl uppercase justify-evenly pb-5">
+          <h2>Roll the dice</h2>
+        </div>
         <div className="flex flex-row flex-wrap justify-evenly gap-10">
           <RangeInput
             message={RANGE_MESSAGE}
