@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import Button from "../Button";
 
 type ModalProps = {
   modalMessage: string;
@@ -6,7 +6,7 @@ type ModalProps = {
   onClick: VoidFunction;
 };
 
-export const Modal = ({ modalMessage, buttonMessage, onClick }: ModalProps) => {
+const Modal = ({ modalMessage, buttonMessage, onClick }: ModalProps) => {
   return (
     <div className="Modal fixed inset-0 flex justify-center items-center z-50">
       <div className="Modal__Background fixed inset-0 bg-black opacity-90"></div>
@@ -24,3 +24,5 @@ export const Modal = ({ modalMessage, buttonMessage, onClick }: ModalProps) => {
 };
 
 Modal.displayName = "Modal";
+
+export default Modal;

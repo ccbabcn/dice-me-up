@@ -6,7 +6,7 @@ type RangeInputProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const RangeInput = ({ message, value, onChange }: RangeInputProps) => {
+const RangeInput = ({ message, value, onChange }: RangeInputProps) => {
   return (
     <div className="RangeInput flex flex-col items-center gap-1">
       <label htmlFor="amount">{`${message} ${value}`}</label>
@@ -23,4 +23,7 @@ export const RangeInput = ({ message, value, onChange }: RangeInputProps) => {
     </div>
   );
 };
+
 RangeInput.displayName = "RangeInput";
+
+export default RangeInput;

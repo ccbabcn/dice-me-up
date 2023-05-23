@@ -6,7 +6,7 @@ type StatsdisplayProps = {
   isHighScore: boolean;
 };
 
-export const StatsDisplay = ({
+const StatsDisplay = ({
   targetScore,
   rollResult,
   highScore,
@@ -30,3 +30,5 @@ export const StatsDisplay = ({
 };
 
 StatsDisplay.displayName = "StatsDisplay";
+
+export default StatsDisplay;

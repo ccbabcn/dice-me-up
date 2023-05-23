@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { StatsDisplay } from ".";
+import StatsDisplay from ".";
 
 describe("Component StatsDisplay", () => {
   test("It should have the expected displayName", () => {

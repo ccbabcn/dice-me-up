@@ -14,23 +14,18 @@ type ButtonProps = {
   isActive: boolean;
 };
 
-const buttonVariants = {
-  primary: "blue",
-  secondary: "green",
-};
-//TODO
-export const Button = ({
-  onClick,
-  message,
-  type,
-  isActive = false,
-}: ButtonProps) => {
+const Button = ({ onClick, message, type, isActive = false }: ButtonProps) => {
   const handleOnclick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event?.preventDefault();
     onClick();
   };
+  const buttonVariants = {
+    primary: "blue",
+    secondary: "green",
+  };
+
   return (
     <button
       disabled={!isActive}
@@ -41,4 +36,7 @@ export const Button = ({
     </button>
   );
 };
+
 Button.displayName = "Button";
+
+export default Button;

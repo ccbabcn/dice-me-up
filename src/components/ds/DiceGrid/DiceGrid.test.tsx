@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import { DiceGrid } from ".";
-import { DieValue } from "../Die";
+import DiceGrid from ".";
+import { DieValue } from "../../types";
 
 describe("Component DiceGrid", () => {
   test("It should have the expected displayName", () => {

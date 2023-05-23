@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import { RangeInput } from ".";
+import RangeInput from ".";
 
 describe("Component RangeInput", () => {
   test("It should have the expected displayName", () => {

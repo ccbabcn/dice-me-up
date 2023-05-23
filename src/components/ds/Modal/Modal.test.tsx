@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import { Modal } from ".";
+import Modal from ".";
 
 describe("Component Modal", () => {
   test("It should have the expected displayName", () => {
