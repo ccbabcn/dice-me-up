@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook, act } from "@testing-library/react-hooks";
 import useGameBoard from "./useGameBoard";
 import React from "react";
 
@@ -7,22 +7,21 @@ describe("useGameBoard custom hook", () => {
     const { result } = renderHook(() => useGameBoard());
     const newValue = 5;
 
-    const event = {
-      target: {
-        value: newValue.toString(),
-      },
-      currentTarget: {
-        value: newValue.toString(),
-      },
-      bubbles: false,
-      cancelable: false,
-    } as React.ChangeEvent<HTMLInputElement>;
+    act(() => {
+      const event = {
+        target: {
+          value: newValue.toString(),
+        },
+        currentTarget: {
+          value: newValue.toString(),
+        },
+        bubbles: false,
+        cancelable: false,
+      } as React.ChangeEvent<HTMLInputElement>;
 
-    result.current.handleRangeChange(event);
-
-    expect(result.current.numberOfDices).toBe(
-      parseInt(event.currentTarget.value)
-    );
+      result.current.handleRangeChange(event);
+    });
+    expect(result.current.numberOfDices).toBe(newValue);
   });
 
   test("should update diceValues and numberOfRolls when handleOnClick is called", () => {
@@ -30,7 +29,9 @@ describe("useGameBoard custom hook", () => {
     const initialNumberOfRolls = result.current.numberOfRolls;
     const initialDiceValues = [1, 2, 3];
 
-    result.current.handleOnClick();
+    act(() => {
+      result.current.handleOnClick();
+    });
 
     expect(result.current.numberOfRolls).toBe(initialNumberOfRolls + 1);
     expect(result.current.diceValues).not.toBe(initialDiceValues);
