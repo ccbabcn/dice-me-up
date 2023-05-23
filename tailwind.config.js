@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       animation: {
-       spin: 'spin 1s ease-in-out',
+        spin: 'spin 1s ease-in-out',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

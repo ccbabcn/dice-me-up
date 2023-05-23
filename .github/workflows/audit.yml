@@ -40,5 +40,5 @@ jobs:
           excludeTitle: "true" # optional: this excludes the title of a pull request
           checkAllCommitMessages: "true" # optional: this checks all commits associated with a pull request
 
-      - name: 🕶️ di3boss' comment
+      - name: finished
         run: echo 🔥 todo flamita
