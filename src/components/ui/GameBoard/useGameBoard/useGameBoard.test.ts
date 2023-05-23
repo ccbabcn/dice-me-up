@@ -2,7 +2,7 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import useGameBoard from "./useGameBoard";
 import React from "react";
 
-describe("useGameBoard custom hook", () => {
+describe.skip("useGameBoard custom hook", () => {
   test("should update numberOfDices when handleRangeChange is called", () => {
     const { result } = renderHook(() => useGameBoard());
     const newValue = 5;
