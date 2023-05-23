@@ -25,8 +25,8 @@ describe("Button component", () => {
   });
 
   test("It should render the correct color of button for primary type", () => {
-    const EXPECTED_COLOR_500 = "blue-500";
-    const EXPECTED_COLOR_700 = "blue-700";
+    const EXPECTED_COLOR_600 = "blue-600";
+    const EXPECTED_COLOR_800 = "blue-800";
 
     const { container } = render(
       <Button onClick={() => {}} message={""} type="primary" isActive />
@@ -34,13 +34,13 @@ describe("Button component", () => {
     const button = container.querySelector("button");
     const buttonClass = button?.classList?.value;
 
-    expect(buttonClass?.includes(EXPECTED_COLOR_500)).toBe(true);
-    expect(buttonClass?.includes(EXPECTED_COLOR_700)).toBe(true);
+    expect(buttonClass?.includes(EXPECTED_COLOR_600)).toBe(true);
+    expect(buttonClass?.includes(EXPECTED_COLOR_800)).toBe(true);
   });
 
   test("It should render the correct color of button for secondary type", () => {
-    const EXPECTED_COLOR_500 = "green-500";
-    const EXPECTED_COLOR_700 = "green-700";
+    const EXPECTED_COLOR_800 = "green-800";
+    const EXPECTED_COLOR_950 = "green-950";
 
     const { container } = render(
       <Button onClick={() => {}} message={""} type="secondary" isActive />
@@ -48,8 +48,8 @@ describe("Button component", () => {
     const button = container.querySelector("button");
     const buttonClass = button?.classList?.value;
 
-    expect(buttonClass?.includes(EXPECTED_COLOR_500)).toBe(true);
-    expect(buttonClass?.includes(EXPECTED_COLOR_700)).toBe(true);
+    expect(buttonClass?.includes(EXPECTED_COLOR_800)).toBe(true);
+    expect(buttonClass?.includes(EXPECTED_COLOR_950)).toBe(true);
   });
 
   test("If active, it should call the passed function when clicked", () => {

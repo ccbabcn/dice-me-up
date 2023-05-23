@@ -22,14 +22,16 @@ const Button = ({ onClick, message, type, isActive = false }: ButtonProps) => {
     onClick();
   };
   const buttonVariants = {
-    primary: "blue",
-    secondary: "green",
+    primary: "bg-blue-600 hover:bg-blue-800",
+    secondary: "bg-green-800 hover:bg-green-950",
+    common:
+      "text-white font-bold py-2 px-4 border border-neutral-700 rounded disabled:opacity-50 disabled:cursor-not-allowed",
   };
 
   return (
     <button
       disabled={!isActive}
-      className={`Button bg-${buttonVariants[type]}-500 hover:bg-${buttonVariants[type]}-700 text-white font-bold py-2 px-4 border border-neutral-700 rounded disabled:opacity-50 disabled:cursor-not-allowed`}
+      className={buttonVariants[type] + buttonVariants.common}
       onClick={handleOnclick}
     >
       {message}
