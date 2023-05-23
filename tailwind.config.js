@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    'src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    'src/components/ds/**/*.{js,ts,jsx,tsx,mdx}',
+    'src/components/ui/**/*.{js,ts,jsx,tsx,mdx}',
     'src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
@@ -11,21 +12,20 @@ module.exports = {
         black: '#000',
         white: '#fff',
         blue: {
-          500:'#3b82f6',
-          700:'#1d4ed8'
+          600:'#2563eb',
+          800:'#1e40af'
         },
         green: {
-          500:'#84cc16',
-          700:'##15803d'
+          800:'#166534',
+          950:'#052e16'
         }
-    },
+      },
       animation: {
-      spin: 'spin 1s ease-in-out',
+       spin: 'spin 1s ease-in-out',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic':'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
