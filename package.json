@@ -1,7 +1,18 @@
 {
   "name": "dice-me-up",
   "version": "0.1.0",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccbabcn/dice-me-up.git"
+  },
+  "author": "cristian bermudez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccbabcn/dice-me-up/issues"
+  },
+  "files": [
+    "readme.md"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
